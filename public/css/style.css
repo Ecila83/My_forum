@@ -1,3 +1,105 @@
+/* théme */
+:root{
+    --primary:#273c75;
+    --primary-light:#273c75;
+    --accent:#00a8ff;
+    --warning:#e84118;
+    --sucess:#44bd32;
+    --font-family:'Open Sans', sans-serif;
+    --box-shadow:0 1px 2px 0 rgb(60 64 67/ 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    --border-radius:3px;
+    --border:1px solid #ddd;
+    --color:#e9ebf1;
+    --color-dark:#444;
+    --gray:#e9ebf1;
+    --gray-dark:#444;
+    
+}
+
+
+
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: red;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    color: var(--color);
+}
+
+ul{
+    list-style: none;
+}
+
+h1,h2,h3,h4,h5{
+    color: var(--color-dark);
+}
+
+/* flex */
+.d-flex {
+    display: flex;
+}
+.flex-row-nowrap {
+    flex-flow: flex nowrap;
+}
+.flex-row-wrap{
+    flex-flow: row wrap;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.align-item-center {
+    align-items: center;
+}
+
+.align-item-end {
+    align-items: flex-end;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.flex-fill {
+    flex: 1;
+  }
+
+/* margin */
+.m-5 {
+    margin: 5px;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.m-20 {
+    margin: 20px;
+}
+/* padding */
+.p-5 {
+    padding: 5px;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.p-20 {
+    padding: 20px;
 }
