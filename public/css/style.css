@@ -13,11 +13,22 @@
     --color-dark:#444;
     --gray:#e9ebf1;
     --gray-dark:#444;
-    
+    --max-width: 1200px;
 }
 
-
-
+/* debug */
+.b1 {
+    background-color: red;
+}
+.b2 {
+    background-color: blue;
+}
+.b3 {
+    background-color: yellow;
+}
+.b4 {
+    background-color: orange;
+}
 /* reset */
 
 * {
@@ -102,4 +113,14 @@ h1,h2,h3,h4,h5{
 
 .p-20 {
     padding: 20px;
+}
+/* general */
+
+.content {
+    max-width:var(--max-width);
+}
+/* sidebar */
+
+.sidebar {
+    min-width: 200px;
 }

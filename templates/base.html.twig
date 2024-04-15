@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
 
-        <script defer src="{{asset('js/index.js')}}"></script>
-        
-        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-      
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
-</html>
+		<script defer src="{{asset('js/index.js')}}"></script>
+
+		<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+        integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700" rel="stylesheet">
+
+	</head>
+	<body class="d-flex flex-column">
+		<header class="b1">header</header>
+		<div class=" flex-fill b2  d-flex flex-row-nowrap justify-content-center">
+			<div class="content  d-flex flex-row-nowrap flex-fill">
+				<div class="sidebar b1">sidebar</div>
+				<div class="flex-fill b4"> {% block body %}Hello{% endblock %}
+					</div>
+				</div>
+			</div>
+			<footer class="b3">footer</footer>
+		</body>
+	</html>
