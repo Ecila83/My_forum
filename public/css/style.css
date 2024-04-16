@@ -1,7 +1,9 @@
+@import url("test.css");
+
 /* théme */
 :root{
     --primary:#273c75;
-    --primary-light:#273c75;
+    --primary-light:#a4bed4;
     --accent:#00a8ff;
     --warning:#e84118;
     --sucess:#44bd32;
@@ -9,13 +11,15 @@
     --box-shadow:0 1px 2px 0 rgb(60 64 67/ 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     --border-radius:3px;
     --border:1px solid var(--gray-light);
-    --color:#e9ebf1;
+    --color:#502b8c;
     --color-primary:white; 
     --color-dark:#444;
     --gray:#e9ebf1;
     --gray-dark:#444;
     --gray-light:#ddd;
     --max-width: 1200px;
+    --footer-background:#0a3d62;
+    --font-size-small:14px;
 }
 
 /* debug */
@@ -98,7 +102,7 @@ h1,h2,h3,h4,h5{
 }
 
 .mr-5 {
-    margin: 5px;
+    margin-right: 5px;
 }
 
 .m-10 {
@@ -107,6 +111,13 @@ h1,h2,h3,h4,h5{
 
 .m-20 {
     margin: 20px;
+}
+.mr-20{
+    margin-right: 20px;
+    }
+
+.mr-50{
+    margin-right: 50px;
 }
 /* padding */
 .p-5 {
@@ -119,6 +130,16 @@ h1,h2,h3,h4,h5{
 
 .p-20 {
     padding: 20px;
+}
+
+.py-20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.py-50 {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 /* general */
 
@@ -152,7 +173,7 @@ h1,h2,h3,h4,h5{
 .btn-primary-stroke {
     border:  1px solid var(--primary);
     color: var(--primary);
-    background-color: var(--color);
+    background-color: var(--color-primary);
 }
 /* sidebar */
 
@@ -182,4 +203,30 @@ header {
 }
 .header-logo img {
     max-width: 75px;
+}
+/* footer */
+
+footer {
+    background-color:var(--footer-background);
+    color: var(--color-primary);
+}
+
+/* sidebar  */
+
+.sidebar-nav li {
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: var(--font-size-small);
+    
+}
+
+.sidebar-nav li:hover {
+    opacity: 0.8;
+    transition: opacity 0.4;
+}
+
+.active {
+    border-left: 3px solid var(--primary);
+    background-color: var(--primary-light);
 }
