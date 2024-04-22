@@ -10,16 +10,24 @@
     --font-family:'Open Sans', sans-serif;
     --box-shadow:0 1px 2px 0 rgb(60 64 67/ 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     --border-radius:3px;
-    --border:1px solid var(--gray-light);
+    --border:1px solid var(--blue-light);
     --color:#502b8c;
     --color-primary:white; 
-    --color-dark:#444;
+    --color-dark:#06273e;
     --gray:#e9ebf1;
-    --gray-dark:#444;
-    --gray-light:#ddd;
+    --blue-dark:#06273e;
+    --blue-light:#e4f2fc;
     --max-width: 1200px;
     --footer-background:#0a3d62;
     --font-size-small:14px;
+    --font-size-regular:16px;
+    --font-weight-regular: 400;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+
+    
+
+
 }
 
 /* debug */
@@ -125,6 +133,9 @@ a {
 .mr-50{
     margin-right: 50px;
 }
+.mb-20{
+    margin-bottom: 20px;
+}
 /* padding */
 .p-5 {
     padding: 5px;
@@ -148,10 +159,14 @@ a {
     padding-bottom: 50px;
 }
 /* general */
+.app-content {
+    background-color: var(--blue-light);
+}
 
 .content {
     max-width:var(--max-width);
 }
+
 
 .btn {
     border: 0px;
@@ -182,6 +197,44 @@ a {
     color: var(--primary);
     background-color: var(--color-primary);
 }
+
+.block {
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+.form-row {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 15px;
+
+}
+
+.form-row label {
+    margin-bottom: 5px;
+    font-weight: var(--font-weight-semi-bold);
+    color:var(--color-dark);
+}
+
+.form-row input, textarea {
+    font-family: var(--font-family);
+    border: 0;
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    background-color: var(--blue-light);
+}
+
+.form-row textarea {
+    min-height: 150px;
+}
+
+.form-errors {
+    color: var(--warning);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semi-bold);
+}
 /* sidebar */
 
 .sidebar {
@@ -196,12 +249,12 @@ header {
 .header-search input{
     border:0;
     outline: 0;
-    background-color: var(--gray-light);
+    background-color: var(--blue-light);
 }
 
 .header-search {
     border-radius: var(--border-radius);
-    background-color: var(--gray-light);
+    background-color: var(--blue-light);
     max-width: 400px;
 }
 
