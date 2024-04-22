@@ -70,11 +70,18 @@ a {
     text-decoration: none;
 }
 
+small{
+    font-size: var(--font-size-small);
+    font-family: var(--font-family);
+
+}
+
 
 /* flex */
 .d-flex {
     display: flex;
 }
+
 .flex-row-nowrap {
     flex-flow: flex nowrap;
 }
@@ -123,6 +130,10 @@ a {
     margin: 10px;
 }
 
+.mr-10{
+    margin-right: 10px;
+}
+
 .m-20 {
     margin: 20px;
 }
@@ -151,6 +162,9 @@ a {
 
 .py-20 {
     padding-top: 20px;
+    padding-bottom: 20px;
+}
+.pb-20{
     padding-bottom: 20px;
 }
 
@@ -205,6 +219,12 @@ a {
     box-shadow: var(--box-shadow);
 }
 
+.block-shadow:hover {
+    cursor: pointer;
+    box-shadow: none;
+    transition: box-shadow 0.4s;
+}
+
 .form-row {
     display: flex;
     flex-flow: column;
@@ -234,6 +254,21 @@ a {
     color: var(--warning);
     font-size: var(--font-size-small);
     font-weight: var(--font-weight-semi-bold);
+}
+
+.avatar {
+    width: 25px;
+    border-radius: 50%;
+}
+
+.clickable{
+    color: var(--color);
+    font-weight: var(--font-weight-semi-bold);
+    cursor: pointer;
+}
+
+.text-small {
+    font-size: var(--font-size-small);
 }
 /* sidebar */
 
@@ -290,4 +325,18 @@ footer {
 .active {
     border-left: 3px solid var(--primary);
     background-color: var(--primary-light);
+}
+
+/* question */
+
+.question-content{
+    border-bottom: 1px solid var(--blue-light);
+}
+
+.rating-up{
+     color:var(--sucess);
+}
+
+.rating-down{
+    color:var(--warning);
 }
