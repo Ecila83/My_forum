@@ -26,4 +26,25 @@ class QuestionController extends AbstractController
             'form' => $formQuestion->createView(),
         ]);
     }
+
+    #[Route('/question/{id}', name: 'question_show')]
+    public function show(Request $request, string $id): Response
+    {
+        $question=            [
+            'title' => "Quel est le dernier livre qui vous a captivé ?",
+            'content'=>  "Partagez avec nous votre expérience de lecture du dernier livre qui vous a vraiment captivé. Que ce soit un thriller 
+                        palpitant, un roman émouvant, ou une œuvre de fiction fascinante, nous sommes impatients d'entendre vos impressions 
+                        et recommandations !", 
+            'rating' => 20,
+            'author' => [
+                'name' => 'Jean-Jacque',
+                'avatar' =>  'https://randomuser.me/api/portraits/men/62.jpg' 
+            ],
+            'nbrResponse' => 6,          
+        ];
+
+        return $this->render('question/show.html.twig', [
+            'question' => $question,
+        ]);
+    }
 }
