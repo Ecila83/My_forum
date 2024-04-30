@@ -6,7 +6,7 @@
     --primary-light:#a4bed4;
     --accent:#00a8ff;
     --warning:#e84118;
-    --sucess:#44bd32;
+    --sucess:#596075;
     --font-family:'Open Sans', sans-serif;
     --box-shadow:0 1px 2px 0 rgb(60 64 67/ 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
     --border-radius:3px;
@@ -276,6 +276,17 @@ small{
     min-width: 200px;
 }
 
+/*flash*/
+.flash {
+    padding: 20px;
+    text-align: center;
+    color: var(--primary-light);
+}
+
+.flash-success{
+    background-color: var(--sucess);
+
+}
 /* header */
 header {
     box-shadow: var(--box-shadow);

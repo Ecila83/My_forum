@@ -17,17 +17,23 @@
 
 	</head>
 	<body class="d-flex flex-column">
-        {{  include('partials/_header.html.twig') }}
+		{{  include('partials/_header.html.twig') }}
+		{% for cat,list in app.flashes %}
+			{% for message in list %}
+				<div class="flash flash-{{cat}}">{{message}}</div>
+			{% endfor %}
+		{% endfor %}
 		<div class=" app-content flex-fill d-flex flex-row-nowrap justify-content-center">
 			<div class="content  d-flex flex-row-nowrap flex-fill py-50">
-                {{  include('partials/_sidebar.html.twig') }}
+				{{  include('partials/_sidebar.html.twig') }}
 				<div class="flex-fill ">
 					{% block body %}Hello
 					{% endblock %}
 				</div>
 			</div>
 		</div>
-        {{  include('partials/_footer.html.twig') }}
+
+		{{  include('partials/_footer.html.twig') }}
 
 	</body>
 </html>
