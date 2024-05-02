@@ -24,6 +24,7 @@
     --font-weight-regular: 400;
     --font-weight-semi-bold: 600;
     --font-weight-bold: 700;
+    --line-height-hight: 30px;
 
     
 
@@ -118,6 +119,13 @@ small{
   }
 
 /* margin */
+.mr-auto{
+    margin-right: auto;
+}
+
+.ml-auto{
+    margin-left: auto;
+}
 .m-5 {
     margin: 5px;
 }
@@ -168,6 +176,10 @@ small{
     padding-bottom: 20px;
 }
 
+.pb-30{
+    padding-bottom: 30px;
+}
+
 .py-50 {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -181,7 +193,10 @@ small{
     max-width:var(--max-width);
 }
 
-
+.separator{
+    border-bottom: 1px solid var(--blue-light);
+    margin: 30px 0px;
+}
 .btn {
     border: 0px;
     border-radius: var(--border-radius);
