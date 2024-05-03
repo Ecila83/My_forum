@@ -12,6 +12,7 @@
     --border-radius:3px;
     --border:1px solid var(--blue-light);
     --color:#502b8c;
+    --color-click:#00a8ff;
     --color-primary:white; 
     --color-dark:#06273e;
     --gray:#e9ebf1;
@@ -172,6 +173,9 @@ small{
     padding-top: 20px;
     padding-bottom: 20px;
 }
+.pb-10{
+    padding-bottom: 10px;
+}
 .pb-20{
     padding-bottom: 20px;
 }
@@ -277,7 +281,7 @@ small{
 }
 
 .clickable{
-    color: var(--color);
+    color: var(--color-click);
     font-weight: var(--font-weight-semi-bold);
     cursor: pointer;
 }
