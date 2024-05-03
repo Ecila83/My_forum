@@ -6,6 +6,7 @@ use App\Entity\Comment;
 use App\Entity\Question;
 use App\Form\CommentType;
 use App\Form\QuestionType;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -62,5 +63,20 @@ class QuestionController extends AbstractController
             'question' => $question,
             'form' => $commentForm->createView()
         ]);
+    }
+    #[Route('/question/rating/{id}/{score}', name: 'question_rating')]
+    public function ratingQuestion(Request $request,Question $question, int $score, EntityManagerInterface $em){
+        $question->setRating($question->getRating() + $score);
+        $em->flush();
+        $referer = $request->server->get('HTTP_REFERER');
+        return $referer ? $this->redirect($referer) : $this->redirectToRoute('home');
+    }
+
+    #[Route('/comment/rating/{id}/{score}', name: 'comment_rating')]
+    public function ratingComment(Request $request,Comment $comment, int $score, EntityManagerInterface $em){
+        $comment->setRating($comment->getRating() + $score);
+        $em->flush();
+        $referer = $request->server->get('HTTP_REFERER');
+        return $referer ? $this->redirect($referer) : $this->redirectToRoute('home');
     }
 }
