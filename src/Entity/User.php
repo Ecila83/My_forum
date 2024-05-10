@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
@@ -19,6 +20,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
+    #[Assert\Email(message: 'Veuillez entrer une adresse email valide.')]
+    #[Assert\NotBlank(message: 'Veuillez entrer une adresse email.')]
+
     private ?string $email = null;
 
     /**
@@ -31,12 +35,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @var string The hashed password
      */
     #[ORM\Column]
+    #[Assert\Length(min: 3,minMessage: 'Le mot de passe doit avoir au moins  3 caractéres')]
+    #[Assert\NotBlank(message: 'Veuillez entrer un mot de passe.')]
     private ?string $password = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez entrer votre prénom')]
+
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Veuillez entrer votre nom')]
+
     private ?string $lastname = null;
 
     /**
@@ -52,6 +62,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private Collection $comments;
 
     #[ORM\Column(length: 255)]
+    #[Assert\Url(message: "votre image doit provenir d'une URL")]
+    #[Assert\NotBlank(message: 'Veuillez mettre une image de profil')]
+
+
     private ?string $picture = null;
 
     public function __construct()
