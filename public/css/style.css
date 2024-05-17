@@ -281,6 +281,10 @@ small{
     border-radius: 50%;
 }
 
+.avatar-lg {
+    width: 40px;
+}
+
 .clickable{
     color: var(--color-click);
     font-weight: var(--font-weight-semi-bold);
@@ -370,4 +374,11 @@ footer {
 
 .rating-down{
     color:var(--warning);
+}
+
+/* question texte */
+
+.question-text, .question-response-text{
+    line-height: var(--line-height-hight);
+    white-space: pre-wrap;
 }
