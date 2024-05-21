@@ -4,7 +4,6 @@
 {% endblock %}
 
 {% block body %}
-
   <ul>
     {% for question in questions %}
       <div class="block block-shadow d-flex flex-row mb-20">
@@ -18,7 +17,7 @@
             <a href={{path('user', {id: question.author.id})}}class="d-flex flex-row align-items-center">
               <img class="avatar mr-10" src="{{ question.author.picture}}"/>
               <small>Demandé par <span class="clickable">{{question.author.fullname}}</span></small>
-            </a
+            </a>
             <div class="d-flex flex-row align-items-center">
               <i class="far fa-comment mr-10"></i>
               <p>{{ question.nbrOfResponse }}</p>
@@ -26,9 +25,6 @@
           </div>
         </div>
       </div>
-
     {% endfor %}
   </ul>
-
-
 {% endblock %}
