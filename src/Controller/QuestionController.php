@@ -7,6 +7,7 @@ use App\Entity\Comment;
 use App\Entity\Question;
 use App\Form\CommentType;
 use App\Form\QuestionType;
+use App\Repository\QuestionRepository;
 use App\Repository\VoteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,8 +45,9 @@ class QuestionController extends AbstractController
   }
 
   #[Route('/question/{id}', name: 'question_show')]
-  public function show(Request $request, Question $question, EntityManagerInterface $em): Response
+  public function show(Request $request, QuestionRepository $questionRepo,int $id, EntityManagerInterface $em): Response
   {
+    $question= $questionRepo->getQuestionWithCommentsAndAuthors($id);
     $options = [
       'question' => $question
     ];
