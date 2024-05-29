@@ -21,6 +21,14 @@ class QuestionRepository extends ServiceEntityRepository
         parent::__construct($registry, Question::class);
     }
 
+    public Function getQuestionWithAuthors() {
+        return $this->createQueryBuilder('q')
+                    ->leftJoin('q.author', 'a')
+                    ->addSelect('a')
+                    ->getQuery()
+                    ->getResult();
+    }
+
     //    /**
     //     * @return Question[] Returns an array of Question objects
     //     */
